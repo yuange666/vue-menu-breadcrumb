@@ -1,0 +1,26 @@
+.ant-table {
+  border: 1px solid #E2E7ED;
+  border-radius: 4px;
+}
+
+.ant-table-body .ant-table-thead th {
+  background: #E2E7ED;
+}
+
+.ant-table-fixed .ant-table-thead th {
+  background: #E2E7ED;
+}
+
+.ant-table-tbody > tr:last-child > td {
+  border-bottom: none;
+}
+
+.ant-table-tbody > tr:nth-child(2n) {
+  background: #F6F8FA;
+}
+
+.ant-table-pagination.ant-pagination {
+  float: none;
+  width: 100%;
+  text-align: center;
+}

@@ -1,0 +1,91 @@
+//菜单
+.ant-menu {
+  height: 100%;
+  background: #477ce4;
+  padding-top: 18px;
+  user-select: none;
+}
+
+.menu-icon {
+  font-size: 16px;
+}
+
+.ant-menu-submenu > .ant-menu {
+  background-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+.ant-menu-item {
+  display: flex;
+  align-items: center;
+  img {
+    padding-right: 6px;
+  }
+}
+
+.ant-menu-inline .ant-menu-item::after {
+  left: 0;
+  right: 100%;
+  border-right-color: #ffA500;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.08));
+  color: #fff !important;
+}
+
+.ant-menu-item:hover {
+  color: #fff;
+}
+
+.ant-menu-submenu-title:hover {
+  color: #fff;
+}
+
+.ant-menu {
+  color: #fff;
+}
+
+.ant-menu-submenu-title {
+  font-size: 16px;
+}
+
+.ant-menu-inline .ant-menu-item {
+  font-size: 16px;
+}
+
+.ant-menu-item-selected {
+  color: #2e68ea !important;
+}
+
+.ant-menu-submenu-arrow::before {
+  background: #fff !important;
+}
+
+.ant-menu-submenu-inline > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow::before {
+  background: #fff !important;
+}
+
+.ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow::after {
+  background: #fff !important;
+}
+
+.ant-menu-submenu-inline > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow::after {
+  background: #fff !important;
+}
+
+.ant-menu-inline > .ant-menu-item {
+  height: 48px;
+  line-height: 48px;
+}
+
+.ant-menu-inline .ant-menu-submenu-title {
+  color: #fff;
+  font-size: 16px;
+}
+
+.ant-menu-sub.ant-menu-inline > .ant-menu-item, .ant-menu-sub.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+  color: #fff;
+}
+.ant-menu-submenu-title .anticon{
+  color: #fff;
+}

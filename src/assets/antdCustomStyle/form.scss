@@ -1,0 +1,12 @@
+.ant-form-item.is_required>.ant-form-item-label>label::before {
+  display: inline-block;
+  margin-right: 4px;
+  color: #f5222d;
+  font-size: 14px;
+  font-family: SimSun, sans-serif;
+  line-height: 1;
+  content: "*";
+}
+.ant-form-item.is_hidden{
+  display: none;
+}
