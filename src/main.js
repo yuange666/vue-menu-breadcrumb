@@ -4,11 +4,13 @@ import router from './router'
 import store from './vuex/store'
 import 'ant-design-vue/dist/antd.less'
 import './assets/antdCustomStyle/index.scss';
-Vue.config.productionTip = false;
 import Antd from 'ant-design-vue';
 import moment from 'moment';
+import * as util from './util/util';
+Vue.config.productionTip = false;
 Vue.use(Antd);
 Vue.prototype.$moment = moment;
+Vue.prototype.$util = util;
 const requireComponent = require.context(
     // Look for files in the current directory
     './components/base',
@@ -16,7 +18,6 @@ const requireComponent = require.context(
     false,
     /\.vue$/
 )
-
 // For each matching file name...
 requireComponent.keys().forEach((fileName) => {
     // Get the component config
@@ -36,6 +37,15 @@ requireComponent.keys().forEach((fileName) => {
     // Globally register the component
     Vue.component(componentName, componentConfig.default || componentConfig)
 })
+// 添加全局方法，命名以global开头
+Vue.mixin({
+	methods:{
+		globalUrl(value){
+			return util.baseUrl+value;
+		}
+	}
+})
+
 new Vue({
   router,
   store,

@@ -47,7 +47,7 @@ export default {
         navigatePath(path){
             this.$router.push({
                 path:path,
-                query:this.routes[path].query
+                query:this.routes[path]?this.routes[path].query:{}
             });
         },
         updateRoutes(){
