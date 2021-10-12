@@ -15,7 +15,7 @@ onlyExpandCurrent 同级菜单只展开当前，默认值：false，选填-->
         >
             <template v-for="item in data">
                 <a-sub-menu
-                    v-if="item.children"
+                    v-if="item.children &&item.children.length>0"
                     :key="item.id"
                 >
                   <span slot="title">
@@ -23,7 +23,7 @@ onlyExpandCurrent 同级菜单只展开当前，默认值：false，选填-->
                     <span>{{ item.name }}</span>
                   </span>
                     <template v-for="(subMenuItem,subMenuKey) in item.children">
-                        <SubMenu :data="subMenuItem" :key="subMenuItem.id" v-if="subMenuItem.children"></SubMenu>
+                        <SubMenu :data="subMenuItem" :key="subMenuItem.id" v-if="subMenuItem.children && subMenuItem.children.length>0"></SubMenu>
                         <a-menu-item v-else :key="subMenuItem.id" :data-item="subMenuItem">
                             {{ subMenuItem.name }}
                         </a-menu-item>

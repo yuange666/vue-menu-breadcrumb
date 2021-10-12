@@ -7,7 +7,7 @@
             <span>{{ props.data.name }}</span>
         </span>
         <template v-for="item in props.data.children">
-            <template v-if="item.children">
+            <template v-if="item.children &&item.children.length>0">
                 <SubMenu :data="item"></SubMenu>
             </template>
             <template v-else>

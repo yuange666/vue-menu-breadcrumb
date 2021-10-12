@@ -53,13 +53,15 @@ export default {
                     children:[
                         {
                             id:'1-1',
-                            name:'菜单1-1'
+                            name:'菜单1-1',
+                            children:[]
                         }
                     ]
                 },
                 {
                     id:'2',
-                    name:'菜单2'
+                    name:'菜单2',
+                    children:[]
                 }
             ],
             collapsed: false
