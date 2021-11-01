@@ -50,10 +50,12 @@ export default {
                 {
                     id:'1',
                     name:'菜单1',
+                    type:'appstore',
                     children:[
                         {
                             id:'1-1',
                             name:'菜单1-1',
+                            type:'appstore',
                             children:[]
                         }
                     ]

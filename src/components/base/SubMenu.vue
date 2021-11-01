@@ -12,6 +12,7 @@
             </template>
             <template v-else>
                 <a-menu-item :key="item.id" :data-item="item">
+                    <a-icon :type="item.type" v-if="item.type"/>
                     <span>{{ item.name }}</span>
                 </a-menu-item>
             </template>
