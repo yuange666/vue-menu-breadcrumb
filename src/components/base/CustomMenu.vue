@@ -85,6 +85,9 @@ export default {
     watch: {
         $route(to, from) {
             this.assignDefaultKeys(to.path);
+        },
+        data(){
+            this.assignDefaultKeys(this.$route.path);
         }
     },
     methods: {
@@ -148,7 +151,6 @@ export default {
                 if (this.onlyExpandCurrent) {
                     this.openKeys = tempOpenKeys;
                 }
-                console.log(this.openKeys);
             }
         }
     },
