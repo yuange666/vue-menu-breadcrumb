@@ -51,20 +51,24 @@ export default {
                     id:'1',
                     name:'菜单1',
                     type:'appstore',
+                    path:'/index',
                     children:[
-                        {
-                            id:'1-1',
-                            name:'菜单1-1',
-                            type:'appstore',
-                            path: '/index',
-                            children:[]
-                        }
+
                     ]
                 },
                 {
                     id:'2',
                     name:'菜单2',
-                    children:[]
+                    type:'appstore',
+                    children:[
+                        {
+                            id:'1-1',
+                            name:'菜单1-1',
+                            type:'appstore',
+                            url: 'https://www.baidu.com/',
+                            children:[]
+                        }
+                    ]
                 }
             ],
             collapsed: false

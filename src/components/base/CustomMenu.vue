@@ -93,8 +93,17 @@ export default {
     methods: {
         menuSelect({key}) {
             let currentItem = this.findKey(key, this.data, (e) => e.id === key);
-            if (currentItem && currentItem.path) {
-                this.$router.push(currentItem.path);
+            if (currentItem) {
+                if(currentItem.path){
+                    this.$router.push(currentItem.path);
+                    return;
+                }
+                if(currentItem.url){
+                    window.open(currentItem.url);
+                    this.$nextTick(()=>{
+                        this.assignDefaultKeys(this.$route.path);
+                    })
+                }
             }
         },
         findKey(key, menuData, callback) {
