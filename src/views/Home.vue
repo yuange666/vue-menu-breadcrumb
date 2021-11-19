@@ -39,8 +39,6 @@
 </template>
 
 <script>
-import API from "../api/api_user.js";
-
 export default {
     name: "layout",
     data() {
@@ -62,10 +60,16 @@ export default {
                     type:'appstore',
                     children:[
                         {
-                            id:'1-1',
-                            name:'菜单1-1',
+                            id:'2-1',
+                            name:'菜单2-1',
                             type:'appstore',
                             url: 'https://www.baidu.com/',
+                            children:[]
+                        },
+                        {
+                            id:'2-2',
+                            name:'菜单2-2',
+                            type:'appstore',
                             children:[]
                         }
                     ]

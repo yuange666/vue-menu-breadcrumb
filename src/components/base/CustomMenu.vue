@@ -1,8 +1,11 @@
-<!--API说明:
+<!--
+API说明:
 参数：
 data 菜单数据，必填
 collapsed 菜单是否处于收起状态，默认值:false,选填
-onlyExpandCurrent 同级菜单只展开当前，默认值：false，选填-->
+onlyExpandCurrent 同级菜单只展开当前，默认值：false，选填
+ellipsis 菜单名称太长，显示省略号，鼠标悬浮显示全称，默认值：false，选填
+-->
 <template>
     <div class="box" :style="{ width: collapsed ? '79px' : '204px' }">
         <a-menu
@@ -20,19 +23,19 @@ onlyExpandCurrent 同级菜单只展开当前，默认值：false，选填-->
                 >
                   <span slot="title">
                     <a-icon :type="item.type" v-if="item.type"/>
-                    <span>{{ item.name }}</span>
+                    <span :title="ellipsis?item.name:false">{{ item.name }}</span>
                   </span>
                     <template v-for="(subMenuItem,subMenuKey) in item.children">
-                        <SubMenu :data="subMenuItem" :key="subMenuItem.id" v-if="subMenuItem.children && subMenuItem.children.length>0"></SubMenu>
+                        <SubMenu :data="subMenuItem" :key="subMenuItem.id" :ellipsis="ellipsis" v-if="subMenuItem.children && subMenuItem.children.length>0"></SubMenu>
                         <a-menu-item v-else :key="subMenuItem.id" :data-item="subMenuItem">
                             <a-icon :type="subMenuItem.type" v-if="subMenuItem.type"/>
-                            <span>{{ subMenuItem.name }}</span>
+                            <span :title="ellipsis?subMenuItem.name:false">{{ subMenuItem.name }}</span>
                         </a-menu-item>
                     </template>
                 </a-sub-menu>
                 <a-menu-item :key="item.id" v-else :data-item="item">
                     <a-icon :type="item.type" v-if="item.type"/>
-                    <span>{{ item.name }}</span>
+                    <span :title="ellipsis?item.name:false">{{ item.name }}</span>
                 </a-menu-item>
             </template>
         </a-menu>
@@ -50,17 +53,18 @@ export default {
             default() {
                 return [
                     // {
-                    //     id: "3",
-                    //     name: "首页",
+                    //     id: "1",
+                    //     name: "菜单1",
                     //     type: "appstore",
                     //     path:'/index',
                     //     children:[
                     //         {
-                    //             id: "2",
-                    //             name: "首页2",
-                    //             type: "appstore",
-                    //             path:'/index/chart',
-                    //         }
+                    //             id: "1-1",//保证唯一性
+                    //             name: "菜单2",//菜单名称
+                    //             type: "appstore",//菜单图标
+                    //             path:'/index/chart',//要写完整路由
+                    //             url:'https://www.baidu.com/',//新开标签页，打开对应的url,与path属性只能二选一
+                    //         },
                     //     ]
                     // },
                 ]
@@ -73,6 +77,10 @@ export default {
         onlyExpandCurrent: {
             type: Boolean,
             default: false
+        },
+        ellipsis:{
+            type:Boolean,
+            default:false
         }
     },
     data() {
