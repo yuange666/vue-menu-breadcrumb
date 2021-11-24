@@ -151,7 +151,17 @@ export default {
             this.openKeys = openKeys;
         },
         assignDefaultKeys(path) {
-            let currentItem = this.findKey(path, this.data, (e) => path.includes(e.path));
+            let currentItem = this.findKey(path, this.data, (e)=>{
+                if(path.includes(e.path)){
+                    if(path===e.path){
+                        return true;
+                    }else {
+                       if(path.slice(e.path.length).includes('/')){
+                           return true;
+                       }
+                    }
+                }
+            });
             if (currentItem) {
                 this.selectedKeys = [currentItem.id];
                 let currentMenuArr = currentItem.id.split('-');

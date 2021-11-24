@@ -14,7 +14,7 @@
                 <img class="company-logo" src="../assets/LOGO-mini.svg" alt v-else/>
             </div>
             <div class="page-top">
-                <div class="app-header">物联网采集监控平台</div>
+                <div class="app-header">需要自定义平台名称</div>
                 <div class="logout">
                     账号设置
                 </div>
@@ -52,26 +52,6 @@ export default {
                     path:'/index',
                     children:[
 
-                    ]
-                },
-                {
-                    id:'2',
-                    name:'菜单2',
-                    type:'appstore',
-                    children:[
-                        {
-                            id:'2-1',
-                            name:'菜单2-1',
-                            type:'appstore',
-                            url: 'https://www.baidu.com/',
-                            children:[]
-                        },
-                        {
-                            id:'2-2',
-                            name:'菜单2-2',
-                            type:'appstore',
-                            children:[]
-                        }
                     ]
                 }
             ],
